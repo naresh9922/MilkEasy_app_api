@@ -10,7 +10,6 @@ const userSchema = new Schema({
     upiid: { type: String },
     address: { type: String },
     password: { type: String, required: true },
-    confirmpass: { type: String },
     updatedOn: { type: Date },
     createdOn: { type: Date }
 });
