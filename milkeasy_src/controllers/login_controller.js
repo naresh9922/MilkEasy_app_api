@@ -6,9 +6,10 @@ const loginController = {
   login: async function (req, res) {
     try {
       const loginData = req.body;
+
       const user = await loginModel.findOne({ email: loginData.email });
+
       if (!user) {
-        // User not found
         return res
           .status(404)
           .json({ message: "Invalid username or password." });
@@ -28,7 +29,9 @@ const loginController = {
         // Invalid usertype
         return res.status(402).json({ message: "Invalid user Type." });
       }
-      return res.status(200).json({ message: "Login successful." });
+      console.log("User name:", user.name);
+      return res.status(200).json({ message: "Login successful.",name:user.name });
+    
     } catch (error) {
       console.error;
     }
@@ -43,3 +46,4 @@ const loginController = {
   },
 };
 module.exports = loginController;
+
