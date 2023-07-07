@@ -24,9 +24,19 @@ const milkCollectionController = {
     },
     FarmersMilkData: async function(req, res) {
         try {
-            let email = req.params.email;
-            const Farmermilkcollection = await millCollectionModel.find({email});
+            let Farmer_name = req.params.name;
+            const Farmermilkcollection = await millCollectionModel.find({Farmer_name});
             return res.json({ success: true, data: Farmermilkcollection });
+        }
+        catch(e) {
+            return res.json({ success: false, message: e });
+        }
+    },
+    CollectorsMilkData: async function(req, res) {
+        try {
+            let Collector_name = req.params.name;
+            const CollectorsCollectionData = await millCollectionModel.find({Collector_name});
+            return res.json({ success: true, data: CollectorsCollectionData });
         }
         catch(e) {
             return res.json({ success: false, message: e });
