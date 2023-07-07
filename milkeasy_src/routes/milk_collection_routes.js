@@ -5,5 +5,6 @@ const milkCollectionController = require("../controllers/milk_collection_control
 
 milkCollectionRoutes.post("/addcollection",milkCollectionController.addMilkCollection);
 milkCollectionRoutes.post("/getcollection",milkCollectionController.fetchMilkCollection);
+milkCollectionRoutes.post("/FarmerMilkcollection/:email",milkCollectionController.FarmersMilkData);
 
 module.exports = milkCollectionRoutes

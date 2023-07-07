@@ -58,5 +58,7 @@ const UserController = {
       return res.json({ success: false, message: ex });
     }
   },
+  
 };
+
 module.exports = UserController;

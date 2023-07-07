@@ -22,5 +22,15 @@ const milkCollectionController = {
             return res.json({ success: false, message: e });
         }
     },
+    FarmersMilkData: async function(req, res) {
+        try {
+            let email = req.params.email;
+            const Farmermilkcollection = await millCollectionModel.find({email});
+            return res.json({ success: true, data: Farmermilkcollection });
+        }
+        catch(e) {
+            return res.json({ success: false, message: e });
+        }
+    },
 };
 module.exports = milkCollectionController;
