@@ -1,4 +1,3 @@
-// name shift fat qty
 
 const { Schema, model } = require('mongoose');
 const uuid = require('uuid');
@@ -14,5 +13,5 @@ SetRateSchema.pre('save',function(next){
     this.createdOn = new Date();
     next();
 });
-const SetRateModel = model('setRates',SetRateSchema);
+const SetRateModel = model('setrates',SetRateSchema);
 module.exports = SetRateModel;
